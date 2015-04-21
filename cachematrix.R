@@ -1,8 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+# Programming Assignment 2: Lexical Scoping
 
-## Write a short comment describing this function
-
+# Returns a list of functions to make a «cached» matrix.
+# set        - set the matrix
+# get        - get the matrix
+# setinverse - set the inverse matrix
+# getinverse - get the inverse matrix
 makeCacheMatrix <- function(a_matrix = matrix()) {
   inv_matrix <- NULL
   set <- function(y) {
@@ -15,11 +17,8 @@ makeCacheMatrix <- function(a_matrix = matrix()) {
   list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
 
-
-## Write a short comment describing this function
-
+# Returns the inverse of a matrix. The inverse matrix could be cached.
 cacheSolve <- function(x, ...) {
-  ## Return a matrix that is the inverse of 'x'
   inv_matrix <- x$getinverse()
   if(!is.null(inv_matrix)) {
     message("getting cached data")
